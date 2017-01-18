@@ -2,21 +2,30 @@
 
 ## 创建应用
 
-`baa.New()`
+`func New() *Baa`
 
 快速创建一个新的应用实例。
 
-`baa.Instance(name string)`
+`func Instance(name string) *Baa`
 
 获取一个命名实例，如果实例不存在则调用 `New()` 创建并且命名。
 
 命名实例 用于不同模块间共享 baa实例的场景。在 入口中创建，在其他模块中 `baa.Instance(name)` 可获取指定的实例。
 
-`baa.Default()`
+`func Default() *Baa`
 
 使用默认的应用实例。
 
 Default 是 `Instance` 的一个默认实现，是全局唯一的实例。在共享场景下，不需要传递 baa 直接调用 `baa.Default()` 即可访问同一实例。
+
+使用示例：
+
+```
+app := baa.New()
+app := baa.Default()
+app := baa.Instance("myApp")
+myApp := baa.Instance("myApp")
+```
 
 ## 路由管理
 
@@ -30,7 +39,7 @@ baa 支持通过 中间件 机制，注入请求过程，实现类似插件的�
 
 依赖注入(dependency injection)简称 DI，是 baa 实现的核心，baa 所有组件基于DI组装起来的。
 
-baa组件的更换，见 [更换内置引擎](*) 一节。
+baa组件的更换，见 [更换内置引擎](#更换内置引擎) 一节。
 
 DI的具体使用，见 [依赖注入](*) 一节。
 
@@ -44,7 +53,7 @@ DI的具体使用，见 [依赖注入](*) 一节。
 
 ```
 app := baa.Default()
-app.Run(":1313")
+app.Run(":1323")
 ```
 
 `baa.RunTLS(addr, certfile, keyfile string)`
