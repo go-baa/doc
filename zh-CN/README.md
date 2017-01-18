@@ -4,6 +4,52 @@
 
 Baa 不使用 ``反射`` 和 ``正则``，没有魔法的实现。
 
+## 特性
+
+* 支持静态路由、参数路由、组路由（前缀路由/命名空间）和路由命名
+* 路由支持链式操作
+* 路由支持文件/目录服务
+* 支持中间件和链式操作
+* 支持依赖注入*
+* 支持JSON/JSONP/XML/HTML格式输出
+* 统一的HTTP错误处理
+* 统一的日志处理
+* 支持任意更换模板引擎（实现baa.Renderer接口即可）
+
+## 文档目录
+
+* [Baa核心](https://github.com/go-baa/doc/tree/master/zh-CN/baa.md)
+* [路由](https://github.com/go-baa/doc/tree/master/zh-CN/router/router.md)
+    * [普通路由](*)
+    * [路由语法](*)
+    * [组路由](*)
+    * [文件路由](*)
+    * [Websocket](*)
+    * [错误路由](*)
+    * [正则路由](*)
+* [中间件](*)
+    * [错误恢复](*)
+    * [访问日志](*)
+    * [gzip](*)
+    * [session](*)
+    * [静态资源优先](*)
+* [依赖注入 DI](*)
+    * [日志](*)
+    * [路由](*)
+    * [缓存](*)
+    * [模板](*)
+* [HTTP上下文](*)
+    * [Context](*)
+    * [Cookie](*)
+    * [模板语法](*)
+* [工具](*)
+    * [bat](*)
+    * [pool](*)
+    * [gRPC](*)
+* [数据库](*)
+    * [gorm](*)
+* [工程化](*)
+
 ## 快速上手
 
 安装:
@@ -12,9 +58,11 @@ Baa 不使用 ``反射`` 和 ``正则``，没有魔法的实现。
 go get -u gopkg.in/baa.v1
 ```
 
-示例:
+代码:
 
 ```
+// baa.go
+
 package main
 
 import (
@@ -30,40 +78,14 @@ func main() {
 }
 ```
 
-## 特性
+运行：
 
-* 支持静态路由、参数路由、组路由（前缀路由/命名空间）和路由命名
-* 路由支持链式操作
-* 路由支持文件/目录服务
-* 支持中间件和链式操作
-* 支持依赖注入*
-* 支持JSON/JSONP/XML/HTML格式输出
-* 统一的HTTP错误处理
-* 统一的日志处理
-* 支持任意更换模板引擎（实现baa.Renderer接口即可）
+```
+go run baa.go
+```
 
 ## 示例
 
 https://github.com/go-baa/example
 
-* [blog](https://github.com/go-baa/example/tree/master/blog)
-
-## 中间件
-
-* [gzip](https://github.com/baa-middleware/gzip)
-* [accesslog](https://github.com/baa-middleware/accesslog)
-* [recovery](https://github.com/baa-middleware/recovery)
-* [session](https://github.com/baa-middleware/session)
-* [static](https://github.com/baa-middleware/static)
-* [requestcache](https://github.com/baa-middleware/requestcache)
-* [nocache](https://github.com/baa-middleware/nocache)
-
-## 组件
-
-* [cache](https://github.com/go-baa/cache)
-* [render](https://github.com/go-baa/render)
-* [pongo2](https://github.com/go-baa/pongo2)
-* [router](https://github.com/go-baa/router)
-* [pool](https://github.com/go-baa/pool)
-* [bat](https://github.com/go-baa/bat)
-
+* [博客](https://github.com/go-baa/example/tree/master/blog)
