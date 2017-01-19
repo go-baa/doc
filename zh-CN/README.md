@@ -33,7 +33,7 @@ Baa 不使用 ``反射`` 和 ``正则``，没有魔法的实现。
     * [自定义错误](https://github.com/go-baa/doc/tree/master/zh-CN/router.md#自定义错误)
         * [500错误](https://github.com/go-baa/doc/tree/master/zh-CN/router.md#500错误)
         * [404错误](https://github.com/go-baa/doc/tree/master/zh-CN/router.md#404错误)
-    * [Websocket](https://github.com/go-baa/doc/tree/master/zh-CN/router.md#Websocket)
+    * [Websocket](https://github.com/go-baa/doc/tree/master/zh-CN/router.md#websocket)
 * [中间件](https://github.com/go-baa/doc/tree/master/zh-CN/middleware.md)
     * [错误恢复](*)
     * [访问日志](*)
