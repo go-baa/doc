@@ -6,6 +6,6 @@ Baa is ``no reflect``, ``no regexp``.
 
 ## Document
 
-* [English](https://github.com/go-baa/doc/tree/master/en-US)
 * [简体中文](https://github.com/go-baa/doc/tree/master/zh-CN)
+* [English](https://github.com/go-baa/doc/tree/master/en-US)
 * [Doc Code](https://github.com/go-baa/doc/tree/master/code)
