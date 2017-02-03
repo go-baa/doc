@@ -1,5 +1,7 @@
 # Baa 中间件 错误恢复
 
+`github.com/baa-middleware/recovery`
+
 错误恢复中间件提供了当业务逻辑`Panic`时记录日志和返回500错误，并且`recovey`Go的程序，防止一个业务中的错误导致应用崩溃。
 
 ## 使用

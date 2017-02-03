@@ -1,5 +1,7 @@
 # Baa 中间件 Gzip
 
+`github.com/baa-middleware/gzip`
+
 Gzip中间件提供了HTTP内容输出的Gzip配置和处理，可以减小网络传输。
 
 ## 使用
@@ -8,6 +10,7 @@ Gzip中间件提供了HTTP内容输出的Gzip配置和处理，可以减小网�
 package main
 
 import (
+	"github.com/baa-middleware/accesslog"
 	"github.com/baa-middleware/gzip"
 	"github.com/baa-middleware/recovery"
 	"gopkg.in/baa.v1"
@@ -16,6 +19,8 @@ import (
 func main() {
 	app := baa.Default()
 	app.Use(recovery.Recovery())
+	app.Use(accesslog.Logger())
+
 	if baa.Env == baa.PROD {
 		app.Use(gzip.Gzip(gzip.Options{
 			CompressionLevel: 9,

@@ -2,21 +2,18 @@ package main
 
 import (
 	"github.com/baa-middleware/accesslog"
-	"github.com/baa-middleware/gzip"
 	"github.com/baa-middleware/recovery"
+	"github.com/baa-middleware/static"
 	"gopkg.in/baa.v1"
 )
 
-func mainGzip() {
+func mainStatic() {
 	app := baa.Default()
 	app.Use(recovery.Recovery())
 	app.Use(accesslog.Logger())
 
-	if baa.Env == baa.PROD {
-		app.Use(gzip.Gzip(gzip.Options{
-			CompressionLevel: 9,
-		}))
-	}
+	// static
+	app.Use(static.Static("/assets", "public/assets", false, nil))
 
 	app.Get("/", func(c *baa.Context) {
 		c.String(200, "Hello, 世界")
