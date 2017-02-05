@@ -76,4 +76,60 @@ cacher的配置，参见 [依赖注入-缓存](https://github.com/go-baa/doc/blo
 
 如果开启，通过 `c.Set()` 设置的内容将会作为缓存KEY的一部分，默认缓存的kEY是URI
 
+## 更多姿势
 
+### 全局使用
+
+配置为最后一个中间件。
+
+```
+if baa.Env == baa.PROD {
+	// Gzip
+	b.Use(gzip.Gzip(gzip.Options{CompressionLevel: 4}))
+
+	// Request Cache
+	b.Use(requestcache.Middleware(requestcache.Option{
+		Enabled: true,
+		Expires: requestcache.DefaultExpires,
+	}))
+}
+```
+
+### 路由使用
+
+配置为某一具体路由使用。
+
+```
+cache := requestcache.Middleware(requestcache.Option{
+	Enabled: !b.Debug(),
+	Expires: requestcache.DefaultExpires,
+})
+
+b.Group("/some-prefix", func() {
+	// ...
+}, cache)
+```
+
+### 使用多个配置
+
+可以在不同的路由中使用不同的配置。
+
+```
+cache1 := requestcache.Middleware(requestcache.Option{
+	Enabled: !b.Debug(),
+	Expires: 60 * 10,
+})
+
+b.Group("/some-prefix", func() {
+	// ...
+}, cache1)
+
+cache2 := requestcache.Middleware(requestcache.Option{
+	Enabled: !b.Debug(),
+	Expires: 60 * 30,
+})
+
+b.Group("/some-prefix-2", func() {
+	// ...
+}, cache2)
+```
