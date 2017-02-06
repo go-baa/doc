@@ -64,50 +64,54 @@ func main() {
 
 ### Name `string`
 
-session name
+Session 的名称
 
 ### IDLength `int`
 
-session id length, default is `16`
+SessionID 的长度，默认 `16` 位
 
 ### Provider `*ProviderOptions`
 
-provider options
+Session的存储器选项
 
 #### Adapter `string`
 
-provider adapter name, currently support `redis` and `memory`
+存储器的适配器类型，支持 `redis` 和 `memory`
+
+> 注意：`memory` 适配器类型，如果应用重启session将全部失效，在集群模式下也不能共享session。
 
 #### Config `interface{}`
- 
-provider adapter config, each adapter has its own config
+
+存储器的适配器配置，不同的适配器类型应使用不同的配置, `session.RedisOptions{}` 或者 `session.MemoryOptions{}`
 
 ### Cookie `*CookieOptions`
 
-session cookie options
+Session的Cookie配置
 
 #### Domain `string`
 
-cookie domain, default is `''`
+Cookie有效域名，默认 空
 
 #### Path `string`
 
-cookie path, default is `/`
+Cookie有效路径，默认 `/`
 
 #### Secure `bool`
 
+Cookie是否加密，默认 `false`
+
 #### LifeTime `int64`
 
-cookie life time, default is `0`, known as session cookie
+Cookie有效期，默认 `0`，即是一个浏览器会话类型，关闭响应的页面即失效。
 
 #### HttpOnly `bool`
 
+Cookie是否仅浏览器有效，默认 `false`
+
 ### GCInterval `int64`
 
-garbage collection run interval, used for `memory` adapter only
+Session GC频率，仅在 `memory` 存储器类型下有效
 
 ### MaxLifeTime `int64`
 
-After this number of seconds, stored data will be seen as 'garbage' and cleaned up by the garbage collection process
-
-
+Session有效期，默认 `0`
