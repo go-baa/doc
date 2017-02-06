@@ -2,7 +2,7 @@
 
 依赖注入(dependency injection)简称 DI，是 baa 实现的核心，baa 所有组件基于DI组装起来的。
 
-默认的 日志、路由、模板 都是通过 DI 注册进来的，在 [Baa核心 更换内置引擎](https://github.com/go-baa/doc/blob/master/zh-CN/baa.md)一节也介绍过。
+默认的 日志、路由、模板 都是通过 DI 注册进来的，在 [Baa核心#更换内置引擎](https://github.com/go-baa/doc/blob/master/zh-CN/baa.md)一节也介绍过。
 
 Baa的初始化函数是这样写的：
 
@@ -179,4 +179,4 @@ baa 除了内置的 render简单模板渲染，还新增了两个模板渲染引
 
 缓存不是 baa内置依赖，作为一个常用组件实现，具体见：
 
-[baa组件 缓存](https://github.com/go-baa/doc/tree/master/zh-CN/component/cache.md)
+[baa组件/缓存](https://github.com/go-baa/doc/tree/master/zh-CN/component/cache.md)

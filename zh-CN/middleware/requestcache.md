@@ -52,7 +52,7 @@ func mainRequestcache() {
 
 建议该中间件的注册顺序为`最后一个`，避免由于其他中间件的逻辑缓存错误的内容。
 
-cacher的配置，参见 [依赖注入-缓存](https://github.com/go-baa/doc/blob/master/zh-CN/component/cache.md)
+cacher的配置，参见 [baa组件/缓存](https://github.com/go-baa/doc/blob/master/zh-CN/component/cache.md)
 
 ## 配置
 
