@@ -174,11 +174,12 @@ baa.SetDI("logger", newLogger)
 
 ```
 app := baa.New()
-baa.SetDI("render", newRender)
+baa.SetDI("router", newRouter)
 ```
 
-> baa 除了内置的 tree路由，还新增了两个路由器可用，见 [router](https://github.com/go-baa/router)
+> router 是内置名称，该命名被用于全局路由器。
 
+baa 除了内置的 tree路由，还新增了两个路由器可用，见 [router](https://github.com/go-baa/router)
 
 ### 模板引擎
 
@@ -189,6 +190,8 @@ app := baa.New()
 baa.SetDI("render", newRender)
 ```
 
+> render 是内置名称，该命名被用于模板渲染。
+
 ### DIer
 
 甚至依赖注入管理器，自己也能被替换，只要实现 `baa.Dier` 接口即可。
@@ -198,7 +201,7 @@ baa.SetDI("render", newRender)
 ```
 app := baa.New()
 app.SetDIer(newDIer)
-app.SetDI("logger", log.New())
+app.SetDI("logger", log.New(os.Stderr, "[Baa] ", log.LstdFlags))
 app.SetDI("render", new(baa.Render))
 app.SetDI("router", baa.NewTree(app))
 ```
