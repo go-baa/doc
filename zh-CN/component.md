@@ -1,6 +1,6 @@
 # Baa 组件
 
-在日常工作，我们结合 bat 开发了一些常用组件。
+在日常工作，我们结合 baa 开发了一些常用组件。
 
 * baa开发工具 [bat](https://github.com/go-baa/doc/tree/master/zh-CN/component/bat.md)
 * 缓存库 [cache](https://github.com/go-baa/doc/tree/master/zh-CN/component/cache.md)
