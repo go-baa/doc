@@ -15,6 +15,7 @@ go get -u gopkg.in/baa.v1
 Example:
 
 ```
+// baa.go
 package main
 
 import (
@@ -24,10 +25,22 @@ import (
 func main() {
     app := baa.New()
     app.Get("/", func(c *baa.Context) {
-        c.String(200, "Hello World!")
+        c.String(200, "Hello, 世界")
     })
     app.Run(":1323")
 }
+```
+
+Run:
+
+```
+go run baa.go
+```
+
+Explore:
+
+```
+http://127.0.0.1:1323/
 ```
 
 ## Features

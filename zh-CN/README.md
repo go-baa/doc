@@ -85,17 +85,16 @@ Baa 不使用 ``反射`` 和 ``正则``，没有魔法的实现。
 
 ## 快速上手
 
-安装:
+### 安装
 
 ```
 go get -u gopkg.in/baa.v1
 ```
 
-代码:
+### 代码
 
 ```
 // baa.go
-
 package main
 
 import (
@@ -105,16 +104,46 @@ import (
 func main() {
     app := baa.New()
     app.Get("/", func(c *baa.Context) {
-        c.String(200, "Hello World!")
+        c.String(200, "Hello, 世界")
     })
     app.Run(":1323")
 }
 ```
 
-运行：
+### 运行
 
 ```
 go run baa.go
+```
+
+### 浏览
+
+```
+http://127.0.0.1:1323/
+```
+
+### 使用中间件
+
+```
+package main
+
+import (
+	"github.com/baa-middleware/accesslog"
+	"github.com/baa-middleware/recovery"
+	"gopkg.in/baa.v1"
+)
+
+func mainAccesslog() {
+	app := baa.Default()
+	app.Use(recovery.Recovery())
+	app.Use(accesslog.Logger())
+
+	app.Get("/", func(c *baa.Context) {
+		c.String(200, "Hello, 世界")
+	})
+
+	app.Run(":1323")
+}
 ```
 
 ## 示例
