@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .title }}</title>
+</head>
+<body>
+
+<div class="content">
+    {{ .content}}
+</div>
+
+    <div class="show">
+
+    {{ if .show}}
+        i want show!
+    {{ else }}
+        i was hidden
+    {{ end }}
+
+    </div>
+
+    <div class="list">
+        {{ range .list }}
+            {{ . }}
+        {{ end }}
+    </div>
+
+    <div class="root">
+        {{ . }}
+    </div>
+    
+</body>
+</html>
