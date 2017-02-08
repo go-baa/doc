@@ -39,11 +39,9 @@ func main() {
 
 ## 配置
 
-gzip中间件只有一个参数：
+### CompressionLevel `int`
 
-* CompressionLevel
-
-参数值范围 -1 ~ 9，在 官方包中有定义，还给出了几个常量值的意义：
+压缩级别，参数值范围 -1 ~ 9，在 官方包中有定义，还给出了几个常量值的意义：
 
 https://golang.org/pkg/compress/flate/#pkg-constants
 

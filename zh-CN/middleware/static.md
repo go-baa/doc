@@ -40,19 +40,19 @@ func mainStatic() {
 func Static(prefix, dir string, index bool, h baa.HandlerFunc) baa.HandlerFunc
 ```
 
-### prefix
+### prefix `string`
 
 URI匹配前缀，如：/public, /assets
 
-### dir
+### dir `string`
 
 静态资源路径，可以使用绝对路径，或者相对于运行路径的路径。
 
-### index
+### index `bool`
 
 是否运行列出目录。
 
-### h 
+### h `baa.HandlerFunc`
 
 附件方法，传入一个 baa.Context 运行对输入和输出做处理。
 

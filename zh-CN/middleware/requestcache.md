@@ -56,21 +56,21 @@ func mainRequestcache() {
 
 > 本中间件依赖名为 `cache` 的 DI，需要注册一个 [Cacher](https://github.com/go-baa/cache)，cacher 的配置见：[依赖注入/缓存](https://github.com/go-baa/doc/tree/master/zh-CN/component/cache.md)
 
-### Enabled
+### Enabled `bool`
 
-是否开启请求缓存控制，值类型：`bool`，默认值：`false`
+是否开启请求缓存控制，默认值：`false`
 
-### Expires
+### Expires `int64`
 
 缓存过期时间，单位：秒，默认值：`600`
 
-### Headers
+### Headers `map[string]string`
 
-附加返回头部，类型 `map[string]string`，默认值：`nil`
+附加返回头部，默认值：`nil`
 
-### ContextRelated
+### ContextRelated `bool`
 
-是否将HTTP上下文中传递的数据加入KEY组合，值类型：`bool`，默认 `false`
+是否将HTTP上下文中传递的数据加入KEY组合，默认 `false`
 
 如果开启，通过 `c.Set()` 设置的内容将会作为缓存KEY的一部分，默认缓存的kEY是URI
 

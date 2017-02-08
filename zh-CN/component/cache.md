@@ -57,57 +57,79 @@ import(
 
 ### 存储 Set
 
+`func Set(key string, v interface{}, ttl int64) error`
+
+根据 `key` 存储 `v` 的值，缓存有效期为 `ttl`秒，返回 `nil` 或者 `error`
+
+> `ttl` 等于0，表示永不过期，如果是内存适配器，在应用重启后数据将丢失
+
 ### 获取 Get
+
+`func Get(key string, out interface{}) error`
+
+根据 `key` 获取存储的值赋给 `out`，返回 `nil` 或者 `error`
+
+> 要求 `out` 为 `引用类型`，Go语言中是按值传递，如果不是引用类型外部无法获取到数据
 
 ### 删除 Delete
 
+`func Delete(key string) error`
+
+删除指定 `key` 的缓存数据，返回 `nil` 或者 `error`
+
 ### 递增 Incr
+
+`func Incr(key string) (int64, error)`
+
+根据 `key` 将存储的值 `加1` 更新存储并返回，额外返回 `nil` 或者 `error`
+
+> `key` 的值应为 数值类型，否则将发生错误
 
 ### 递减 Decr
 
+`func Decr(key string) (int64, error)`
+
+根据 `key` 将存储的值 `减1` 更新存储并返回，额外返回 `nil` 或者 `error`
+
+> `key` 的值应为 数值类型，否则将发生错误
+
 ### 检测是否存在 Exist
+
+`func Exist(key string) bool`
+
+根据 `key` 检查是否存在有效的缓存数据，返回 `true` 表示存在，`false` 表示不存在
 
 ### 清空缓存 Flush
 
+`func Flush() error`
 
+清空缓存中的数据
 
 ## 配置
 
-### Common
+### Name `string`
 
-**Name**
+缓存实例名称
 
-``string``
+### Prefix `string`
 
-the cache name
+缓存索引前缀
 
-**Prefix**
+### Adapter `string`
 
-``string``
+适配器名称，目前支持 memory, memcache, redis 三种存储
 
-the cache key prefix, used for isolate different cache instance/app.
+### Config `map[string]interface{}`
 
-**Adapter**
+适配器配置，不同的适配器有不同的配置。
 
-``string``
+### 适配器 Memory
 
-the cache adapter name, choose support adapter: memory, file, memcache, redis.
+#### bytesLimit `int64`
 
-**Config**
+内存适配器，只有一个配置参数，内存大小限制，单位 字节，默认为 `128m`
 
-``map[string]interface{}``
-
-the cache adapter config, use a dict, values was diffrent with adapter.
-
-### Adapter Memory
-
-**bytesLimit**
-
-``int64``
-
-set the memory cache memory limit, default is 128m
-
-**Usage**
+#### 使用示例
 
 ```
 app.SetDI("cache", cache.New(cache.Options{
@@ -120,21 +142,17 @@ app.SetDI("cache", cache.New(cache.Options{
 }))
 ```
 
-### Adapter Memcache
+### 适配器 Memcache
 
-**host**
+#### host `string`
 
-``string``
+memcached 服务器IP地址，默认为 `127.0.0.1`
 
-memcached server host.
+#### port `string`
 
-**port**
+memcached 服务器端口，默认为 `11211`
 
-``string``
-
-memcached server port.
-
-**Usage**
+#### 使用示例
 
 ```
 app.SetDI("cache", cache.New(cache.Options{
@@ -148,33 +166,25 @@ app.SetDI("cache", cache.New(cache.Options{
 }))
 ```
 
-### Adapter Redis
+### 适配器 Redis
 
-**host**
+#### host `string`
 
-``string``
+redis 服务器IP地址，默认为 `127.0.0.1`
 
-redis server host.
+#### port `string`
 
-**port**
+redis 服务器端口，默认为 `6379`
 
-``string``
+#### password `string`
 
-redis server port.
+redis 服务器连接密码，默认 `空`
 
-**password**
+#### poolsize `int`
 
-``string``
+redis 库连接池限制，默认保持 `10` 个连接
 
-redis server auth, default none.
-
-**poolsize**
-
-``int``
-
-connection pool size, default 10.
-
-**Usage**
+#### 使用示例
 
 ```
 app.SetDI("cache", cache.New(cache.Options{
@@ -189,4 +199,3 @@ app.SetDI("cache", cache.New(cache.Options{
     },
 }))
 ```
-
