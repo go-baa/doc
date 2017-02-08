@@ -133,7 +133,7 @@ import (
 	"gopkg.in/baa.v1"
 )
 
-func mainAccesslog() {
+func main() {
 	app := baa.Default()
 	app.Use(recovery.Recovery())
 	app.Use(accesslog.Logger())
