@@ -67,8 +67,8 @@ Baa 不使用 ``反射`` 和 ``正则``，没有魔法的实现。
         * [render](https://github.com/go-baa/doc/tree/master/zh-CN/component/render.md)
         * [pongo2](https://github.com/go-baa/doc/tree/master/zh-CN/component/pongo2.md)
 * [日志](https://github.com/go-baa/doc/tree/master/zh-CN/log.md)
-    * [日志接口](#)
-    * [日志方法](#)
+    * [日志接口](https://github.com/go-baa/doc/tree/master/zh-CN/log.md#日志接口)
+    * [日志方法](https://github.com/go-baa/doc/tree/master/zh-CN/log.md#日志方法)
 * [数据库](https://github.com/go-baa/doc/tree/master/zh-CN/database.md)
     * [gorm](http://jinzhu.me/gorm/)
     * [xorm](http://xorm.io/)
@@ -80,6 +80,8 @@ Baa 不使用 ``反射`` 和 ``正则``，没有魔法的实现。
     * [pool](https://github.com/go-baa/doc/tree/master/zh-CN/component/pool.md)
     * [render](https://github.com/go-baa/doc/tree/master/zh-CN/component/render.md)
     * [router](https://github.com/go-baa/doc/tree/master/zh-CN/component/router.md)
+    * [log](https://github.com/go-baa/doc/tree/master/zh-CN/component/log.md)
+    * [setting](https://github.com/go-baa/doc/tree/master/zh-CN/component/setting.md)
 * [工程化](https://github.com/go-baa/doc/tree/master/zh-CN/project.md)
     * [目录结构](#)
     * [配置文件](#)
@@ -87,6 +89,7 @@ Baa 不使用 ``反射`` 和 ``正则``，没有魔法的实现。
     * [控制器](#)
     * [路由](#)
     * [模型](#)
+
 
 ## 快速上手
 
