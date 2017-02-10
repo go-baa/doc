@@ -160,5 +160,6 @@ func main() {
 
 https://github.com/go-baa/example
 
-* [博客](https://github.com/go-baa/example/tree/master/blog)
+* [blog](https://github.com/go-baa/example/tree/master/blog)
+* [api](http://github.com/go-baa/example/tree/master/api)
 * [websocket](http://github.com/go-baa/example/tree/master/websocket)
