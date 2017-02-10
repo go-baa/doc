@@ -83,14 +83,14 @@ Baa 不使用 ``反射`` 和 ``正则``，没有魔法的实现。
     * [log](https://github.com/go-baa/doc/tree/master/zh-CN/component/log.md)
     * [setting](https://github.com/go-baa/doc/tree/master/zh-CN/component/setting.md)
 * [工程化](https://github.com/go-baa/doc/tree/master/zh-CN/project.md)
-    * [目录结构](ttps://github.com/go-baa/doc/tree/master/zh-CN/project.md#目录结构)
-    * [控制器](ttps://github.com/go-baa/doc/tree/master/zh-CN/project.md#控制器)
-    * [数据模型](ttps://github.com/go-baa/doc/tree/master/zh-CN/project.md#数据模型)
-    * [配置文件](ttps://github.com/go-baa/doc/tree/master/zh-CN/project.md#配置文件)
-    * [模板](ttps://github.com/go-baa/doc/tree/master/zh-CN/project.md#模板)
-    * [静态资源](ttps://github.com/go-baa/doc/tree/master/zh-CN/project.md#静态资源)
-    * [打包发布](ttps://github.com/go-baa/doc/tree/master/zh-CN/project.md#打包发布)
-    * [依赖管理](ttps://github.com/go-baa/doc/tree/master/zh-CN/project.md#依赖管理)
+    * [目录结构](https://github.com/go-baa/doc/tree/master/zh-CN/project.md#目录结构)
+    * [控制器](https://github.com/go-baa/doc/tree/master/zh-CN/project.md#控制器)
+    * [数据模型](https://github.com/go-baa/doc/tree/master/zh-CN/project.md#数据模型)
+    * [配置文件](https://github.com/go-baa/doc/tree/master/zh-CN/project.md#配置文件)
+    * [模板](https://github.com/go-baa/doc/tree/master/zh-CN/project.md#模板)
+    * [静态资源](https://github.com/go-baa/doc/tree/master/zh-CN/project.md#静态资源)
+    * [打包发布](https://github.com/go-baa/doc/tree/master/zh-CN/project.md#打包发布)
+    * [依赖管理](https://github.com/go-baa/doc/tree/master/zh-CN/project.md#依赖管理)
 
 
 ## 快速上手
