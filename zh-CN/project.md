@@ -209,6 +209,38 @@ func (t *userModel) Create(name, email string) (int, error) {
 
 更多的配置文件也建议放在 `conf` 目录中，自己去读取。
 
+配置示例：
+
+```
+// conf/app.ini
+[default]
+# app
+app.name = baaBlog
+app.version = 0.1
+app.url = ""
+debug = false
+
+# http
+http.address = 0.0.0.0
+http.port = 80
+http.access_open = off
+
+# output log to os.Stderr
+log.file = os.Stderr
+# 0 off, 1 fatal, 2 panic, 5 error, 6 warn, 10 info, 11 debug
+log.level = 11
+
+# development mode overwrite default config
+[development]
+debug = true
+
+# production mode overwrite default config
+[production]
+debug = false
+```
+
+> 再次说明，这个配置文件依赖 [setting](https://github.com/go-baa/setting) 项目。
+
 ## 模板
 
 模板最简单，按着结构放就好了。
