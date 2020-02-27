@@ -28,7 +28,7 @@ package main
 import (
 	"time"
 
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 )
 
 func main() {
@@ -73,7 +73,7 @@ package main
 
 import (
 	"github.com/baa-middleware/accesslog"
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 )
 
 func main() {

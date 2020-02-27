@@ -18,7 +18,7 @@ package main
 
 import (
     "github.com/go-baa/router/regtree"
-    "gopkg.in/baa.v1"
+    "github.com/go-baa/baa"
 )
 
 func main() {

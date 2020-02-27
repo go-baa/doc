@@ -4,7 +4,7 @@ import (
 	"log"
 	"os"
 
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 )
 
 func main() {

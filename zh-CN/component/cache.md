@@ -15,7 +15,7 @@ package main
 
 import (
     "github.com/go-baa/cache"
-    "gopkg.in/baa.v1"
+    "github.com/go-baa/baa"
 )
 
 func main() {
@@ -48,7 +48,7 @@ func main() {
 
 ```
 import(
-    "gopkg.in/baa.v1"
+    "github.com/go-baa/baa"
     "github.com/go-baa/cache"
     _ "github.com/go-baa/cache/memcache"
     _ "github.com/go-baa/cache/redis"

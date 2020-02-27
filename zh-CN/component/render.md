@@ -17,7 +17,7 @@ package main
 
 import (
     "github.com/go-baa/render"
-    "gopkg.in/baa.v1"
+    "github.com/go-baa/baa"
 )
 
 func main() {

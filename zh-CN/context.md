@@ -216,7 +216,7 @@ Response 中用于处理结果输出，是标准包中 `http.ResponseWriter` 的
 package main 
 
 import (
-    "gopkg.in/baa.v1"
+    "github.com/go-baa/baa"
 )
 
 func main() {
@@ -306,7 +306,7 @@ baa 的模板渲染使用 `Context`存储 中的数据作为模板变量。
 ```
 package main
 
-import baa "gopkg.in/baa.v1"
+import baa "github.com/go-baa/baa"
 
 func main() {
 	app := baa.New()

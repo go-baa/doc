@@ -4,8 +4,8 @@ import (
 	"github.com/baa-middleware/accesslog"
 	"github.com/baa-middleware/recovery"
 	"github.com/baa-middleware/requestcache"
+	"github.com/go-baa/baa"
 	"github.com/go-baa/cache"
-	"gopkg.in/baa.v1"
 )
 
 func mainRequestcache() {

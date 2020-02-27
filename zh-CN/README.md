@@ -98,7 +98,7 @@ Baa 不使用 ``反射`` 和 ``正则``，没有魔法的实现。
 ### 安装
 
 ```
-go get -u gopkg.in/baa.v1
+go get -u github.com/go-baa/baa
 ```
 
 ### 代码
@@ -108,7 +108,7 @@ go get -u gopkg.in/baa.v1
 package main
 
 import (
-    "gopkg.in/baa.v1"
+    "github.com/go-baa/baa"
 )
 
 func main() {
@@ -140,7 +140,7 @@ package main
 import (
 	"github.com/baa-middleware/accesslog"
 	"github.com/baa-middleware/recovery"
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 )
 
 func main() {

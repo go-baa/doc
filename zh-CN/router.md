@@ -37,7 +37,7 @@ func (b *Baa) Any(pattern string, h ...HandlerFunc) RouteNode
 package main
 
 import (
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 )
 
 func main() {
@@ -74,7 +74,7 @@ package main
 
 import (
 	"fmt"
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 )
 
 func main() {
@@ -115,7 +115,7 @@ package main
 
 import (
 	"fmt"
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 	"github.com/go-baa/router/regtree"
 )
 
@@ -189,7 +189,7 @@ package main
 
 import (
 	"fmt"
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 )
 
 func main() {
@@ -241,7 +241,7 @@ curl http://127.0.0.1:1323/group/111
 package main
 
 import (
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 )
 
 func main() {
@@ -378,7 +378,7 @@ import (
 	"fmt"
 	"time"
 
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 	"github.com/gorilla/websocket"
 )
 

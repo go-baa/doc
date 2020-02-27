@@ -4,7 +4,7 @@ import (
 	"github.com/baa-middleware/accesslog"
 	"github.com/baa-middleware/recovery"
 	"github.com/baa-middleware/static"
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 )
 
 func mainStatic() {

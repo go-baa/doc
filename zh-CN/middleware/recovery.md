@@ -11,7 +11,7 @@ package main
 
 import (
 	"github.com/baa-middleware/recovery"
-	"gopkg.in/baa.v1"
+	"github.com/go-baa/baa"
 )
 
 func main() {

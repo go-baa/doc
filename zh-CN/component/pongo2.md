@@ -13,7 +13,7 @@ package main
 
 import (
     "github.com/go-baa/pongo2"
-    "gopkg.in/baa.v1"
+    "github.com/go-baa/baa"
 )
 
 func main() {

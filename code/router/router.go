@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
+	"github.com/go-baa/baa"
 	"github.com/go-baa/router/regtree"
-	"gopkg.in/baa.v1"
 )
 
 func main() {
